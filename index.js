@@ -17,6 +17,15 @@ app.post('/greet', (req, res) => {
     res.json({ message: `Hello, ${sanitizedName}!` });
 });
 
+app.post('/test', (req, res) => {
+    const { name } = req.body;
+    if (!name) {
+        return res.status(400).json({ error: 'Name is required' });
+    }
+    const sanitizedName = name.trim(); // Add sanitization
+    res.json({ message: `Hello, ${sanitizedName}!` });
+});
+
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
