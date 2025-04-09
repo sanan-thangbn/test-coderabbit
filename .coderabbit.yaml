@@ -1,0 +1,23 @@
+# Language for review comments
+language: "en-US"
+
+# Review settings
+reviews:
+  # Tone of the feedback: professional, friendly, or sarcastic
+  tone: "professional"
+  # Files or directories to ignore during review
+  ignored_paths:
+    - "node_modules/**"
+    - "*.json"
+  # Enable or disable specific review types
+  enable:
+    - "suggestions"  # Suggest improvements
+    - "warnings"     # Highlight potential issues
+    - "errors"       # Catch critical bugs
+
+# Optional: Customize AI behavior
+ai:
+  # Max characters for review comments
+  max_comment_length: 2000
+  # Enable/disable auto-fixing suggestions
+  auto_fix: true
